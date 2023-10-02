@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 function App() {
   return (
-    <div className='text-center'>App</div>
+    <div>App</div>
   )
 }
 
