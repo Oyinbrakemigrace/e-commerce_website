@@ -4,7 +4,7 @@ import Product from "../components/Product";
 
 function Home() {
   const { products } = useContext(ProductContext);
-  console.log(products);
+  //console.log(products);
 
   const filteredProducts = products.filter((product) => {
     return (
