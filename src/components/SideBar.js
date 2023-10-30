@@ -7,7 +7,7 @@ import { CartContext } from "../contexts/CartContext";
 
 function SideBar() {
   const { isOpen, handleClose } = useContext(SideBarContext);
-  const{} = useContext(CartContext)
+  const{cart} = useContext(CartContext)
   return (
     <div
       className={`${
@@ -19,6 +19,11 @@ function SideBar() {
         <div className="cursor-pointer w-8 h-8 flex justify-center items-center" onClick={handleClose}>
           <AiOutlineArrowRight className="text-2xl" />
         </div>
+      </div>
+      <div>
+        {cart.map((item)=>{
+          return <Cart item={item} key={item.id}/>
+        })}
       </div>
     </div>
   );

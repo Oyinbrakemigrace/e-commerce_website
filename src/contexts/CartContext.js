@@ -22,12 +22,12 @@ function CartProvider({children}) {
       });
       //if cartItem exists,it creates a new cart and carefully map 
       //through the existing ones to see if the item.id matches the id of any item in the cart.
-      //if it does, it adds more items to the existing one by increasing it by 1 and if it does not, it remains the same.
+      //if it does, it adds more items to the existing one by increasing it by 1 and if it does not, it adds the new item to the cart.
       setCart(newCart);
       //now, the cart is now replenished and the old cart is replaced with the new one with the setCart function.
     } else {
       setCart([...cart, newItem]);
-      //and if cartItem does not exists (meaning the cart is empty, it sets the cart to contain the new item.)
+      //and if cartItem does not exists (meaning the cart is empty), it sets the cart to contain the new item.
     }
   };
   console.log(cart);
@@ -36,13 +36,10 @@ function CartProvider({children}) {
   //to add a new item to the cart or update the quantity of an existing item.
 
   return (
-    <CartContext.Provider value={{ addToCart }}>
+    <CartContext.Provider value={{ addToCart, cart }}>
       {children}
     </CartContext.Provider>
   );
 }
 
 export default CartProvider
-
-
-
